@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?contentBackground"
+    android:orientation="vertical">
+
+    <!--<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.chimbori.hermitcrab.quicksettings.ShareActionsView
+            android:id="@id/quick_settings_share_actions"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <com.chimbori.hermitcrab.quicksettings.ReaderSettingsView
+            android:id="@id/quick_settings_reader_settings"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <com.chimbori.hermitcrab.quicksettings.TextZoomSettingsView
+            android:id="@id/quick_settings_text_zoom_settings"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>-->
+</ScrollView>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/drawer_lite_app_bookmarks"
+        android:checkableBehavior="single"
+        android:orderInCategory="2" />
+    <group
+        android:id="@+id/drawer_lite_app_menu_group_4"
+        android:orderInCategory="3">
+        <item
+            android:id="@+id/drawer_get_premium"
+            android:icon="@drawable/ic_crown_orange"
+            android:title="@string/upgrade_to_premium" />
+        <item
+            android:id="@+id/drawer_help"
+            android:icon="@drawable/ic_help_circle_grey600_24dp"
+            android:title="@string/help" />
+        <item
+            android:id="@+id/drawer_social_media"
+            android:icon="@drawable/ic_facebook_box_grey600_24dp"
+            android:title="@string/social_media" />
+        <item
+            android:id="@+id/drawer_invite_friends"
+            android:icon="@drawable/ic_group_grey600_24dp"
+            android:title="@string/invite_friends" />
+    </group>
+</menu>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?contentBackground">
+
+    <ScrollView
+        android:layout_width="0.0dip"
+        android:layout_height="0.0dip"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/quick_settings_history_nav_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<com.chimbori.hermitcrab.quicksettings.MoreSettingsView
+                android:id="@id/quick_settings_more_settings"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <com.chimbori.hermitcrab.quicksettings.ShareActionsView
+                android:id="@id/quick_settings_share_actions"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <com.chimbori.hermitcrab.quicksettings.PageActionsView
+                android:id="@id/quick_settings_page_actions"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <com.chimbori.hermitcrab.quicksettings.ReaderPromoView
+                android:id="@id/quick_settings_reader_promo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <com.chimbori.hermitcrab.quicksettings.ReaderSettingsView
+                android:id="@id/quick_settings_reader_settings"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <com.chimbori.hermitcrab.quicksettings.LiteAppSettingsView
+                android:id="@id/quick_settings_lite_app_settings"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <com.chimbori.hermitcrab.quicksettings.TextZoomSettingsView
+                android:id="@id/quick_settings_text_zoom_settings"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_standard" />-->
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="0.0dip"
+        android:layout_height="@dimen/padding_half"
+        android:background="@drawable/gradient_top_shadow"
+        app:layout_constraintBottom_toTopOf="@id/quick_settings_history_nav_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/quick_settings_history_nav_container"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
