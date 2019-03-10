@@ -369,4 +369,8 @@ Would you like to rate this app?"</string>
     <string name="what_are_lite_apps">What are Lite Apps?</string>
     <string name="whats_new">What’s new?</string>
     <string name="yes">Yes</string>
+    <string name="app_title_facebook">Facebook</string>
+    <string name="app_title_twitter">Twitter</string>
+    <string name="app_title_instagram">Instagram</string>
+    <string name="app_title_weibo">微博</string>
 </resources>
