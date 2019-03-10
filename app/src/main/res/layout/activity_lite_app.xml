@@ -35,7 +35,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="0.0dip"
                 android:layout_weight="1.0"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <!--<com.chimbori.reader.ReaderView
                 android:id="@id/lite_app_reader"
@@ -44,6 +44,7 @@
                 android:layout_weight="1.0"
                 android:visibility="gone" />-->
 
+            <!--  -->
             <FrameLayout
                 android:id="@+id/lite_app_customization_container"
                 android:layout_width="fill_parent"
@@ -75,9 +76,10 @@
             app:headerLayout="@layout/drawer_lite_app_header"
             app:menu="@menu/menu_drawer_lite_app">
 
+            <!-- 抽屉 最底下 的 工具栏 -->
             <android.support.constraint.ConstraintLayout
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/navigation_menu_padding_bottom_negative">
 
                 <View
@@ -90,6 +92,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
+                <!-- close -->
                 <TextView
                     android:id="@+id/lite_app_navigation_close_button"
                     style="@style/QuickSettingsButton"
@@ -105,6 +108,7 @@
                     app:layout_constraintHorizontal_chainStyle="spread"
                     app:layout_constraintStart_toStartOf="parent" />
 
+                <!-- customize -->
                 <TextView
                     android:id="@+id/lite_app_navigation_customize_button"
                     style="@style/QuickSettingsButton"
@@ -119,6 +123,7 @@
                     app:layout_constraintHorizontal_chainStyle="spread"
                     app:layout_constraintStart_toEndOf="@id/lite_app_navigation_close_button" />
 
+                <!-- lite_apps -->
                 <TextView
                     android:id="@+id/lite_app_navigation_lite_apps_button"
                     style="@style/QuickSettingsButton"

@@ -10,8 +10,8 @@ public class Constant {
     private static int[] appTitleResIds = {R.string.app_title_facebook, R.string.app_title_twitter,
             R.string.app_title_instagram, R.string.app_title_weibo};
 
-    private static String[] appUrls = {"https://www.facebook.com", "https://twitter.com",
-            "https://www.instagram.com/", "https://www.weibo.com/login.php"};
+    private static String[] appUrls = {"https://www.facebook.com/", "https://twitter.com/",
+            "https://www.instagram.com/", "https://www.weibo.com/"};
 
     public static List<LiteApp> getSupportLiteApp() {
         List<LiteApp> result = new ArrayList<>();
