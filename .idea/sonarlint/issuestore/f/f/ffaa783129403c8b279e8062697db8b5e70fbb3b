@@ -1,0 +1,9 @@
+
+}squid:S1450+"ZRemove the "webSettings" field and declare it as a local variable in the relevant methods.(¬§¤Œÿÿÿÿÿ8ÈşÊÔ–-
+Tsquid:S1905]"1Remove this unnecessary cast to "NavigationView".(ˆú¼îøÿÿÿÿ8ÈşÊÔ–-
+€squid:S1450-"]Remove the "nvHeaderLayout" field and declare it as a local variable in the relevant methods.(Ô–šïüÿÿÿÿ8ÈşÊÔ–-
+jsquid:CommentedOutCodeLine¹"<This block of commented-out lines of code should be removed.(„äÊ8ÈşÊÔ–-
+Gsquid:S1905T"*Remove this unnecessary cast to "Toolbar".(İ›É)8ÈşÊÔ–-
+lsquid:S1871‡"MThis branch's code block is the same as the block for the branch on line 132.(‚Ò¦˜8ÈşÊÔ–-
+Rsquid:S1905W"/Remove this unnecessary cast to "DrawerLayout".(öÀ‘Ãúÿÿÿÿ8ÈşÊÔ–-
+msquid:CallToDeprecatedMethodZ"9Remove this use of "setDrawerListener"; it is deprecated.(ø¶Âßÿÿÿÿÿ8ÈşÊÔ–-
