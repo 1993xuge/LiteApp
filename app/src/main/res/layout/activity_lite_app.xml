@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/lite_app_drawer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,60 +18,24 @@
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/lite_app_toolbar"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/primary_dark"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:popupTheme="@style/ToolbarPopupTheme" />
 
-            <!--<com.chimbori.hermitcrab.widgets.SearchQueryEditor
-                android:id="@id/lite_app_site_search_query_editor"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/search"
-                android:visibility="gone"
-                app:cardBackgroundColor="@color/cardview_dark_background" />-->
-
             <FrameLayout
                 android:id="@+id/lite_app_web_container"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="0.0dip"
                 android:layout_weight="1.0"
                 android:visibility="visible" />
-
-            <!--<com.chimbori.reader.ReaderView
-                android:id="@id/lite_app_reader"
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="1.0"
-                android:visibility="gone" />-->
-
-            <!--  -->
-            <FrameLayout
-                android:id="@+id/lite_app_customization_container"
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="1.0"
-                android:visibility="gone" />
-
-            <!--<com.chimbori.hermitcrab.web.RatingRequestView
-                android:id="@id/lite_app_rating_request_view"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />-->
         </LinearLayout>
-
-        <ViewStub
-            android:id="@+id/lite_app_quick_settings_stub"
-            android:layout_width="@dimen/quick_settings_width"
-            android:layout_height="fill_parent"
-            android:layout_gravity="end"
-            android:layout="@layout/view_quick_settings_lite_app" />
 
         <android.support.design.widget.NavigationView
             android:id="@+id/lite_app_navigation"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="start"
             android:clipToPadding="false"
             android:paddingBottom="@dimen/navigation_menu_padding_bottom"
@@ -98,9 +64,9 @@
                     style="@style/QuickSettingsButton"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_standard"
                     android:layout_marginStart="@dimen/padding_half"
                     android:layout_marginTop="@dimen/padding_standard"
-                    android:layout_marginBottom="@dimen/padding_standard"
                     android:drawableTop="@drawable/ic_close_grey600_24dp"
                     android:text="@string/close"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -114,8 +80,8 @@
                     style="@style/QuickSettingsButton"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding_standard"
                     android:layout_marginBottom="@dimen/padding_standard"
+                    android:layout_marginTop="@dimen/padding_standard"
                     android:drawableTop="@drawable/ic_settings_grey600_24dp"
                     android:text="@string/customize"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -129,9 +95,9 @@
                     style="@style/QuickSettingsButton"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding_standard"
-                    android:layout_marginEnd="@dimen/padding_half"
                     android:layout_marginBottom="@dimen/padding_standard"
+                    android:layout_marginEnd="@dimen/padding_half"
+                    android:layout_marginTop="@dimen/padding_standard"
                     android:drawableTop="@drawable/ic_apps_grey600_24dp"
                     android:text="@string/lite_apps"
                     app:layout_constraintBottom_toBottomOf="parent"

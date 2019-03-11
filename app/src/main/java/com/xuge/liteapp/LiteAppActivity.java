@@ -3,10 +3,16 @@ package com.xuge.liteapp;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
@@ -35,12 +41,14 @@ public class LiteAppActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_lite_app);
 
         liteApp = getIntent().getParcelableExtra(INTENT_EXTRA_LITEAPP);
         if (liteApp == null) {
             return;
         }
+        setTitle(liteApp.getTitleResId());
 
         initView();
         fillContent();
@@ -63,6 +71,24 @@ public class LiteAppActivity extends AppCompatActivity {
 
     private void initView() {
         webContent = findViewById(R.id.lite_app_web_container);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.lite_app_toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.lite_app_drawer);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.lite_app_navigation);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                return false;
+            }
+        });
+
     }
 
     private void fillContent() {
@@ -70,8 +96,6 @@ public class LiteAppActivity extends AppCompatActivity {
         setWebSettings();
 
         webView.loadUrl(liteApp.getUrl());
-//        webView.loadUrl("http://www.youth.cn/");
-
 
         //设置不用系统浏览器打开,直接显示在当前Webview
         webView.setWebViewClient(new WebViewClient() {
@@ -84,8 +108,6 @@ public class LiteAppActivity extends AppCompatActivity {
 
         //设置WebChromeClient类
         webView.setWebChromeClient(new WebChromeClient() {
-
-
             //获取网站标题
             @Override
             public void onReceivedTitle(WebView view, String title) {
