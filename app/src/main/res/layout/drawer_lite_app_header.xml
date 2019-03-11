@@ -6,7 +6,7 @@
 
     <ImageView
         android:id="@+id/lite_app_drawer_background"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:src="@drawable/background_drawer_greyscale"
@@ -18,7 +18,6 @@
         android:layout_height="@dimen/drawer_icon_size"
         android:layout_marginStart="@dimen/padding_standard"
         android:layout_marginBottom="@dimen/padding_standard"
-        android:src="@drawable/ic_lite_apps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

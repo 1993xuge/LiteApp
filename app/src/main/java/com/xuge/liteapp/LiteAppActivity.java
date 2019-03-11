@@ -13,13 +13,17 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 /**
  * Created at 2019/3/10 下午12:39.
@@ -38,6 +42,9 @@ public class LiteAppActivity extends AppCompatActivity {
     private WebView webView;
     private WebSettings webSettings;
 
+    private View nvHeaderLayout;
+    private ImageView nvIcon;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +55,6 @@ public class LiteAppActivity extends AppCompatActivity {
         if (liteApp == null) {
             return;
         }
-        setTitle(liteApp.getTitleResId());
 
         initView();
         fillContent();
@@ -65,13 +71,16 @@ public class LiteAppActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         //当页面被失去焦点被切换到后台不可见状态，需要执行onPause
-//通过onPause动作通知内核暂停所有的动作，比如DOM的解析、plugin的执行、JavaScript执行。
+        // 通过onPause动作通知内核暂停所有的动作，比如DOM的解析、plugin的执行、JavaScript执行。
         webView.onPause();
     }
 
     private void initView() {
         webContent = findViewById(R.id.lite_app_web_container);
+        initDrawer();
+    }
 
+    private void initDrawer() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.lite_app_toolbar);
         setSupportActionBar(toolbar);
 
@@ -89,6 +98,8 @@ public class LiteAppActivity extends AppCompatActivity {
             }
         });
 
+        nvHeaderLayout = navigationView.getHeaderView(0);
+        nvIcon = nvHeaderLayout.findViewById(R.id.lite_app_drawer_icon);
     }
 
     private void fillContent() {
@@ -111,7 +122,8 @@ public class LiteAppActivity extends AppCompatActivity {
             //获取网站标题
             @Override
             public void onReceivedTitle(WebView view, String title) {
-                System.out.println("标题在这里");
+                Log.d(TAG, "onReceivedTitle: title = " + title);
+                LiteAppActivity.this.setTitle(title);
             }
 
             //获取加载进度
@@ -125,6 +137,13 @@ public class LiteAppActivity extends AppCompatActivity {
                     Log.d(TAG, "onProgressChanged: progress = " + progress);
                 }
             }
+
+            @Override
+            public void onReceivedIcon(WebView view, Bitmap icon) {
+                Log.d(TAG, "onReceivedIcon: icon = " + icon);
+                nvIcon.setImageBitmap(icon);
+            }
+
         });
 
 
@@ -148,6 +167,12 @@ public class LiteAppActivity extends AppCompatActivity {
                 // handler.cancel();      //表示挂起连接，为默认方式
                 // handler.handleMessage(null);    //可做其他处理
             }
+
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                Log.d(TAG, "onReceivedError: ErrorCode = " + error.getErrorCode());
+                Log.d(TAG, "onReceivedError: Description = " + error.getDescription());
+            }
         });
     }
 
@@ -160,20 +185,20 @@ public class LiteAppActivity extends AppCompatActivity {
         // webSettings.setPluginsEnabled(true);
 
         //设置自适应屏幕，两者合用
-//        webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小
-//        webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
+        webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小
+        webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
 
         //缩放操作
-//        webSettings.setSupportZoom(true); //支持缩放，默认为true。是下面那个的前提。
-//        webSettings.setBuiltInZoomControls(true); //设置内置的缩放控件。若为false，则该WebView不可缩放
-//        webSettings.setDisplayZoomControls(false); //隐藏原生的缩放控件
+        webSettings.setSupportZoom(true); //支持缩放，默认为true。是下面那个的前提。
+        webSettings.setBuiltInZoomControls(true); //设置内置的缩放控件。若为false，则该WebView不可缩放
+        webSettings.setDisplayZoomControls(false); //隐藏原生的缩放控件
 
         //其他细节操作
-//        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK); //关闭webview中缓存
-//        webSettings.setAllowFileAccess(true); //设置可以访问文件
-//        webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
-//        webSettings.setLoadsImagesAutomatically(true); //支持自动加载图片
-//        webSettings.setDefaultTextEncodingName("utf-8");//设置编码格式
+        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK); //关闭webview中缓存
+        webSettings.setAllowFileAccess(true); //设置可以访问文件
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
+        webSettings.setLoadsImagesAutomatically(true); //支持自动加载图片
+        webSettings.setDefaultTextEncodingName("utf-8");//设置编码格式
     }
 
     //点击返回上一页面而不是退出浏览器
