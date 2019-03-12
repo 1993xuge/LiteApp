@@ -1,13 +1,21 @@
 package com.xuge.liteapp;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ShortcutInfo;
+import android.content.pm.ShortcutManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Icon;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +26,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private RecyclerView rcContent;
     private List<LiteApp> liteAppList;
 
@@ -44,9 +53,11 @@ public class MainActivity extends AppCompatActivity {
         if (liteApp == null) {
             return;
         }
-        Intent intent = new Intent(this, LiteAppActivity.class);
-        intent.putExtra(LiteAppActivity.INTENT_EXTRA_LITEAPP, liteApp);
-        startActivity(intent);
+        Intent intent = new Intent(this, Main2Activity.class);
+
+        Utils.addShortcut(this, getString(liteApp.getTitleResId()),
+                liteApp.getIcon(), intent);
+
     }
 
     private class ContentAdapter extends RecyclerView.Adapter {

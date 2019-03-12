@@ -22,4 +22,6 @@ public class Constant {
 
         return result;
     }
+
+    public static final String SYSTEM_ACTION_INSTALL_SHORTCUT = "com.android.launcher.action.INSTALL_SHORTCUT";
 }
