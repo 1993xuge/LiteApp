@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="bottom_fab_margin">36.0dip</dimen>
-    <dimen name="bottom_nav_height">64.0dip</dimen>
-    <dimen name="bottom_sheet_peek_height_create_by_url">112.0dip</dimen>
-    <dimen name="bottom_sheet_peek_height_library">100.0dip</dimen>
-    <dimen name="card_elevation">2.0dip</dimen>
     <dimen name="cardview_compat_inset_shadow">1.0dip</dimen>
     <dimen name="cardview_default_elevation">2.0dip</dimen>
     <dimen name="cardview_default_radius">2.0dip</dimen>
@@ -15,16 +10,6 @@
     <dimen name="compat_control_corner_material">2.0dip</dimen>
     <dimen name="compat_notification_large_icon_max_height">320.0dip</dimen>
     <dimen name="compat_notification_large_icon_max_width">320.0dip</dimen>
-    <dimen name="corner_radius">4.0dip</dimen>
-    <dimen name="default_gap">8.0dip</dimen>
-    <dimen name="default_padding_side">24.0dip</dimen>
-    <dimen name="default_preview_height">40.0dip</dimen>
-    <dimen name="default_preview_image_height">36.0dip</dimen>
-    <dimen name="default_slider_bar_height">4.0dip</dimen>
-    <dimen name="default_slider_handler_radius">10.0dip</dimen>
-    <dimen name="default_slider_height">36.0dip</dimen>
-    <dimen name="default_slider_margin">24.0dip</dimen>
-    <dimen name="default_slider_margin_btw_title">20.0dip</dimen>
     <dimen name="design_appbar_elevation">4.0dip</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168.0dip</dimen>
     <dimen name="design_bottom_navigation_active_item_min_width">96.0dip</dimen>
@@ -55,7 +40,6 @@
     <dimen name="design_navigation_padding_bottom">8.0dip</dimen>
     <dimen name="design_navigation_separator_vertical_padding">8.0dip</dimen>
     <dimen name="design_snackbar_action_inline_max_width">128.0dip</dimen>
-    <item name="design_snackbar_action_text_color_alpha" type="dimen">1.0</item>
     <dimen name="design_snackbar_background_corner_radius">0.0dip</dimen>
     <dimen name="design_snackbar_elevation">6.0dip</dimen>
     <dimen name="design_snackbar_extra_spacing_horizontal">0.0dip</dimen>
@@ -70,20 +54,12 @@
     <dimen name="design_tab_text_size">14.0sp</dimen>
     <dimen name="design_tab_text_size_2line">12.0sp</dimen>
     <dimen name="design_textinput_caption_translate_y">5.0dip</dimen>
-    <dimen name="dialog_max_height">200.0dip</dimen>
-    <dimen name="dialog_min_height">160.0dip</dimen>
-    <dimen name="dialog_min_width">400.0dip</dimen>
     <item name="disabled_alpha_material_dark" type="dimen">0.3</item>
     <item name="disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="drawer_icon_size">64.0dip</dimen>
-    <dimen name="fab_elevation">4.0dip</dimen>
-    <item name="fab_margin" type="dimen">@dimen/padding_standard</item>
     <dimen name="fastscroll_default_thickness">8.0dip</dimen>
     <dimen name="fastscroll_margin">0.0dip</dimen>
     <dimen name="fastscroll_minimum_range">50.0dip</dimen>
-    <dimen name="grid_icon_size">64.0dip</dimen>
-    <dimen name="hero_animation_height">120.0dip</dimen>
-    <dimen name="hex_color_field_width">72.0dip</dimen>
     <item name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item name="highlight_alpha_material_dark" type="dimen">0.2</item>
     <item name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -91,30 +67,10 @@
     <item name="hint_alpha_material_light" type="dimen">0.38</item>
     <item name="hint_pressed_alpha_material_dark" type="dimen">0.7</item>
     <item name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
-    <dimen name="icon_with_padding">32.0dip</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20.0dip</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800.0dip</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120.0dip</dimen>
-    <dimen name="layout_max_width">600.0dip</dimen>
-    <dimen name="list_icon_size">40.0dip</dimen>
-    <dimen name="log_text_size">8.0sp</dimen>
-    <dimen name="material_text_body1">14.0sp</dimen>
-    <dimen name="material_text_body2">13.0sp</dimen>
     <dimen name="material_text_button">14.0sp</dimen>
-    <dimen name="material_text_caption">12.0sp</dimen>
-    <dimen name="material_text_display1">34.0sp</dimen>
-    <dimen name="material_text_display2">45.0sp</dimen>
-    <dimen name="material_text_display3">56.0sp</dimen>
-    <dimen name="material_text_display4">112.0sp</dimen>
-    <dimen name="material_text_headline">24.0sp</dimen>
-    <dimen name="material_text_menu">14.0sp</dimen>
-    <dimen name="material_text_subhead">16.0sp</dimen>
-    <dimen name="material_text_title">20.0sp</dimen>
-    <dimen name="mi_baseline">16.0dip</dimen>
-    <dimen name="mi_baseline_half">8.0dip</dimen>
-    <dimen name="mi_button_cta_height">48.0dip</dimen>
-    <dimen name="mi_margin_bottom_pager_indicator">39.0dip</dimen>
-    <dimen name="mi_y_offset">144.0dip</dimen>
     <dimen name="mtrl_bottomappbar_fabOffsetEndMode">60.0dip</dimen>
     <dimen name="mtrl_bottomappbar_fab_cradle_margin">5.0dip</dimen>
     <dimen name="mtrl_bottomappbar_fab_cradle_rounded_corner_radius">8.0dip</dimen>
@@ -146,19 +102,12 @@
     <dimen name="mtrl_card_spacing">8.0dip</dimen>
     <dimen name="mtrl_chip_pressed_translation_z">3.0dip</dimen>
     <dimen name="mtrl_chip_text_size">14.0sp</dimen>
-    <item name="mtrl_emphasis_disabled" type="dimen">0.38</item>
-    <item name="mtrl_emphasis_high_type" type="dimen">0.87</item>
-    <item name="mtrl_emphasis_medium" type="dimen">0.6</item>
     <dimen name="mtrl_fab_elevation">6.0dip</dimen>
     <dimen name="mtrl_fab_translation_z_hovered_focused">2.0dip</dimen>
     <dimen name="mtrl_fab_translation_z_pressed">6.0dip</dimen>
     <dimen name="mtrl_navigation_elevation">0.0dip</dimen>
     <dimen name="mtrl_navigation_item_horizontal_padding">22.0dip</dimen>
     <dimen name="mtrl_navigation_item_icon_padding">14.0dip</dimen>
-    <dimen name="mtrl_shape_corner_size_large_component">0.0dip</dimen>
-    <dimen name="mtrl_shape_corner_size_medium_component">4.0dip</dimen>
-    <dimen name="mtrl_shape_corner_size_small_component">4.0dip</dimen>
-    <item name="mtrl_snackbar_action_text_color_alpha" type="dimen">0.5</item>
     <dimen name="mtrl_snackbar_background_corner_radius">4.0dip</dimen>
     <dimen name="mtrl_snackbar_margin">8.0dip</dimen>
     <dimen name="mtrl_textinput_box_bottom_offset">3.0dip</dimen>
@@ -187,55 +136,21 @@
     <dimen name="notification_subtext_size">13.0sp</dimen>
     <dimen name="notification_top_pad">10.0dip</dimen>
     <dimen name="notification_top_pad_large_text">5.0dip</dimen>
-    <dimen name="overlay_pill_button_offset_from_bottom">36.0dip</dimen>
-    <dimen name="overlay_pill_button_text_size">12.0sp</dimen>
-    <dimen name="padding_double">32.0dip</dimen>
     <dimen name="padding_half">8.0dip</dimen>
-    <dimen name="padding_one_eighth">2.0dip</dimen>
-    <dimen name="padding_one_point_five">24.0dip</dimen>
     <dimen name="padding_quarter">4.0dip</dimen>
     <dimen name="padding_standard">16.0dip</dimen>
-    <dimen name="pill_button_text_size">14.0sp</dimen>
-    <dimen name="preference_dropdown_padding_start">72.0dip</dimen>
-    <dimen name="preference_icon_minWidth">0.0dip</dimen>
-    <dimen name="preference_seekbar_padding_end">22.0dip</dimen>
-    <dimen name="preference_seekbar_padding_start">0.0dip</dimen>
-    <dimen name="preference_seekbar_value_width">36.0dip</dimen>
-    <dimen name="progress_bar_height">3.0dip</dimen>
     <dimen name="quick_settings_label_width">80.0dip</dimen>
-    <dimen name="quick_settings_width">294.0dip</dimen>
-    <dimen name="reader_divider_width">0.5dip</dimen>
-    <dimen name="reader_selected_stroke_width">3.0dip</dimen>
-    <dimen name="reader_text_size">18.0sp</dimen>
-    <dimen name="reader_unselected_stroke_width">1.0dip</dimen>
-    <dimen name="shortcut_icon_size">44.0dip</dimen>
-    <dimen name="snackbar_padding_horizontal">12.0dip</dimen>
-    <dimen name="snackbar_padding_vertical">14.0dip</dimen>
-    <dimen name="snackbar_single_line_height">48.0dip</dimen>
-    <dimen name="subtitle_corner_radius">2.0dip</dimen>
-    <dimen name="subtitle_outline_width">2.0dip</dimen>
-    <dimen name="subtitle_shadow_offset">2.0dip</dimen>
-    <dimen name="subtitle_shadow_radius">2.0dip</dimen>
-    <dimen name="tab_indicator_height">3.0dip</dimen>
-    <dimen name="tall_dialog_min_height">400.0dip</dimen>
     <dimen name="tooltip_corner_radius">2.0dip</dimen>
     <dimen name="tooltip_horizontal_padding">16.0dip</dimen>
     <dimen name="tooltip_margin">8.0dip</dimen>
-    <dimen name="tooltip_max_width">320.0dip</dimen>
     <dimen name="tooltip_precise_anchor_extra_offset">8.0dip</dimen>
     <dimen name="tooltip_precise_anchor_threshold">96.0dip</dimen>
     <dimen name="tooltip_vertical_padding">6.5dip</dimen>
     <dimen name="tooltip_y_offset_non_touch">0.0dip</dimen>
     <dimen name="tooltip_y_offset_touch">16.0dip</dimen>
-    <dimen name="ttlm_default_corner_radius">4.0dip</dimen>
-    <dimen name="ttlm_default_elevation">2.0dip</dimen>
-    <dimen name="ttlm_default_padding">20.0dip</dimen>
-    <dimen name="ttlm_default_stroke_weight">0.0dip</dimen>
-    <dimen name="zero_state_create_button_bottom_offset">72.0dip</dimen>
 
     <!--
 Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
-    <dimen name="widget_margin">8dp</dimen>
 </resources>

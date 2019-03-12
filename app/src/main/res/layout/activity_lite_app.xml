@@ -49,7 +49,6 @@
                 android:layout_marginBottom="@dimen/navigation_menu_padding_bottom_negative">
 
                 <View
-                    android:id="@+id/lite_app_drawer_top_shadow"
                     android:layout_width="0.0dip"
                     android:layout_height="@dimen/padding_half"
                     android:layout_marginBottom="@dimen/padding_half"

@@ -1,7 +1,11 @@
 package com.xuge.liteapp;
 
+import android.app.ActivityManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.http.SslError;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -48,8 +52,10 @@ public class LiteAppActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_lite_app);
+
 
         int id = getIntent().getIntExtra(INTENT_EXTRA_LITEAPP_ID, -1);
         Log.d(TAG, "onCreate: name = " + id);
@@ -57,6 +63,18 @@ public class LiteAppActivity extends AppCompatActivity {
         liteApp = Constant.SUPPORT_LITEAPP.get(id);
         if (liteApp == null) {
             finish();
+        }
+
+        Log.d(TAG, "onCreate: 123 alpha = " + Color.alpha(getColor(R.color.colorAccent)) );
+        Log.d(TAG, "onCreate: is 255 = " + (Color.alpha(getColor(R.color.colorAccent)) != 255));
+        String title = getString(liteApp.getTitleResId());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            setTaskDescription(new ActivityManager.TaskDescription(
+                    title, liteApp.getIcon(), getColor(R.color.colorAccent)));
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            setTaskDescription(new ActivityManager.TaskDescription(
+                    title, BitmapFactory.decodeResource(getResources(),
+                    liteApp.getIcon()), getColor(R.color.colorAccent)));
         }
 
         initView();

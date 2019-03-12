@@ -5,7 +5,6 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/lite_app_drawer_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
