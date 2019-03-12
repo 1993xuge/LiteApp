@@ -9,9 +9,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Icon;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -57,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
         Utils.addShortcut(this, getString(liteApp.getTitleResId()),
                 liteApp.getIcon(), intent);
-
     }
 
     private class ContentAdapter extends RecyclerView.Adapter {
