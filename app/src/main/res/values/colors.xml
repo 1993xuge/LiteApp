@@ -5,6 +5,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="gray">#E0E0E0</color>
+
     <color name="accent">#ff2d78e8</color>
     <color name="accent_dark">#ff0f64e2</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>

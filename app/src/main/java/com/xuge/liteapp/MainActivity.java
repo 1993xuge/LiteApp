@@ -1,22 +1,12 @@
 package com.xuge.liteapp;
 
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ShortcutInfo;
-import android.content.pm.ShortcutManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Icon;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         liteAppList = new ArrayList<>();
-        liteAppList.addAll(Constant.getSupportLiteApp());
+        liteAppList.addAll(Constant.SUPPORT_LITEAPP.values());
     }
 
     private void initView() {
@@ -54,10 +44,14 @@ public class MainActivity extends AppCompatActivity {
         if (liteApp == null) {
             return;
         }
-        Intent intent = new Intent(this, Main2Activity.class);
 
-        Utils.addShortcut(this, getString(liteApp.getTitleResId()),
-                liteApp.getIcon(), intent);
+        Intent intent = new Intent(this, LiteAppActivity.class);
+        intent.putExtra(LiteAppActivity.INTENT_EXTRA_LITEAPP_ID, liteApp.getIcon());
+        Utils.addShortcut(this, liteApp, intent);
+    }
+
+    public void Query(View view) {
+        Utils.getShortcut(this);
     }
 
     private class ContentAdapter extends RecyclerView.Adapter {

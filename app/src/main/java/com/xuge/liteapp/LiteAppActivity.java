@@ -34,7 +34,7 @@ public class LiteAppActivity extends AppCompatActivity {
 
     private static final String TAG = LiteAppActivity.class.getSimpleName();
 
-    public static final String INTENT_EXTRA_LITEAPP = "intent_extra_liteapp";
+    public static final String INTENT_EXTRA_LITEAPP_ID = "intent_extra_liteapp_id";
 
     private LiteApp liteApp;
 
@@ -51,9 +51,12 @@ public class LiteAppActivity extends AppCompatActivity {
         setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_lite_app);
 
-        liteApp = getIntent().getParcelableExtra(INTENT_EXTRA_LITEAPP);
+        int id = getIntent().getIntExtra(INTENT_EXTRA_LITEAPP_ID, -1);
+        Log.d(TAG, "onCreate: name = " + id);
+
+        liteApp = Constant.SUPPORT_LITEAPP.get(id);
         if (liteApp == null) {
-            return;
+            finish();
         }
 
         initView();

@@ -3,7 +3,9 @@ package com.xuge.liteapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class LiteApp implements Parcelable{
+public class LiteApp implements Parcelable {
+
+    private String id;
     private int titleResId;
     private int icon;
     private String url;
@@ -12,12 +14,20 @@ public class LiteApp implements Parcelable{
         this.titleResId = titleResId;
         this.icon = icon;
         this.url = url;
+        id = generateId();
     }
 
     protected LiteApp(Parcel in) {
+        id = in.readString();
         titleResId = in.readInt();
         icon = in.readInt();
         url = in.readString();
+    }
+
+    private String generateId() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(titleResId).append("_").append(icon).append("_").append(url);
+        return builder.toString();
     }
 
     public static final Creator<LiteApp> CREATOR = new Creator<LiteApp>() {
@@ -31,6 +41,10 @@ public class LiteApp implements Parcelable{
             return new LiteApp[size];
         }
     };
+
+    public String getId() {
+        return id;
+    }
 
     public int getTitleResId() {
         return titleResId;
@@ -51,6 +65,7 @@ public class LiteApp implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
         dest.writeInt(titleResId);
         dest.writeInt(icon);
         dest.writeString(url);
